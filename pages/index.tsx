@@ -77,7 +77,7 @@ const Home = () => {
   const handleDetail = async (movieId: string) => {
     try {
       const response = await axios.get(
-        `http://www.omdbapi.com/?apikey=${API_KEY}&i=${movieId}&plot=full`
+        `https://www.omdbapi.com/?apikey=${API_KEY}&i=${movieId}&plot=full`
       );
       setSelectedMovie(response.data);
       open();
