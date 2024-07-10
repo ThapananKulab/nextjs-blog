@@ -13,21 +13,20 @@ import {
   TextInput,
 } from "@mantine/core";
 
+interface Movie {
+  imdbID: string;
+  Title: string;
+  Poster: string;
+  Rated: string;
+  Released: string;
+  Runtime: string;
+}
+
 const API_KEY = "18cd1938";
 const initialUrl = `http://www.omdbapi.com/?apikey=${API_KEY}&type=movie`;
 
-const Home = () => {
-  interface Movie {
-    imdbID: string;
-    Title: string;
-    Poster: string;
-    Rated: string; // Add Rated property
-    Released: string; // Add Released property
-    Runtime: string; // Add Runtime property
-  }
-
+export default function Home() {
   const [movies, setMovies] = useState<Movie[]>([]);
-
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [opened, { open, close }] = useDisclosure(false);
@@ -85,7 +84,7 @@ const Home = () => {
       console.error("Error fetching movie details:", error);
     }
   };
-  //
+
   return (
     <Container size="md">
       <Text align="center" size="xl" style={{ marginBottom: "1rem" }}>
@@ -94,7 +93,7 @@ const Home = () => {
       <TextInput
         value={searchTerm}
         onChange={(event) => setSearchTerm(event.target.value)}
-        placeholder="(Ex.Marvel Batman  )"
+        placeholder="Enter movie title"
         style={{ marginBottom: "1rem" }}
       />
       <div
@@ -148,8 +147,6 @@ const Home = () => {
                 <h4>{movie.Title}</h4>
               </div>
               <Button
-                variant="gradient"
-                gradient={{ from: "grape", to: "pink", deg: 90 }}
                 style={{
                   display: "block",
                   margin: "0 auto",
@@ -178,5 +175,4 @@ const Home = () => {
       </Modal>
     </Container>
   );
-};
-export default Home;
+}
