@@ -94,7 +94,7 @@ const Home = () => {
       <TextInput
         value={searchTerm}
         onChange={(event) => setSearchTerm(event.target.value)}
-        placeholder="Enter movie title"
+        placeholder="(Ex.Marvel Batman)"
         style={{ marginBottom: "1rem" }}
       />
       <div
@@ -148,6 +148,8 @@ const Home = () => {
                 <h4>{movie.Title}</h4>
               </div>
               <Button
+                variant="gradient"
+                gradient={{ from: "grape", to: "pink", deg: 90 }}
                 style={{
                   display: "block",
                   margin: "0 auto",
