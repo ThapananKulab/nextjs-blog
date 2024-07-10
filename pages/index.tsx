@@ -14,7 +14,7 @@ import {
 } from "@mantine/core";
 
 const API_KEY = process.env.NEXT_PUBLIC_OMDB_API_KEY;
-const initialUrl = `http://www.omdbapi.com/?apikey=${API_KEY}&type=movie`;
+const initialUrl = `https://www.omdbapi.com/?apikey=${API_KEY}&type=movie`;
 
 const Home = () => {
   interface Movie {
