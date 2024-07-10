@@ -16,7 +16,7 @@ import {
 const API_KEY = "18cd1938";
 const initialUrl = `http://www.omdbapi.com/?apikey=${API_KEY}&type=movie`;
 
-export default function Home() {
+const Home = () => {
   interface Movie {
     imdbID: string;
     Title: string;
@@ -26,7 +26,6 @@ export default function Home() {
     Runtime: string; // Add Runtime property
   }
 
-  // Initialize movies state with an empty array of Movie objects
   const [movies, setMovies] = useState<Movie[]>([]);
 
   const [loading, setLoading] = useState(true);
@@ -177,4 +176,5 @@ export default function Home() {
       </Modal>
     </Container>
   );
-}
+};
+export default Home;
