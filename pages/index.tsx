@@ -85,7 +85,7 @@ const Home = () => {
       console.error("Error fetching movie details:", error);
     }
   };
-
+  //
   return (
     <Container size="md">
       <Text align="center" size="xl" style={{ marginBottom: "1rem" }}>
@@ -94,7 +94,7 @@ const Home = () => {
       <TextInput
         value={searchTerm}
         onChange={(event) => setSearchTerm(event.target.value)}
-        placeholder="(Ex.Marvel Batman)"
+        placeholder="(Ex.Marvel Batman  )"
         style={{ marginBottom: "1rem" }}
       />
       <div
